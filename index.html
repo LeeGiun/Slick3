@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <!-- slick cdn은 css 연결한 링크 위에 넣어야함 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/>
+    <!-- fontawesome cdn은 위치 상관없음 -->
+    <link rel="stylesheet" href="style.css">
+    <title>Slick 2</title>
+</head>
+<body>
+    <!-- .wrap>.main 단축어
+    <div class="wrap">
+        <div class="main"> -->
+    <div class="wrap">
+        <div class="main">
+            <div class="your-class">
+                <div class="s1">
+                    <!-- autoplay 자동재생
+                    muted 음소거
+                    controls 아래 재생 컨트롤 -->
+                    <video autoplay muted controls src="http://h.vod.cgv.co.kr:80/vodCGVa/86157/86157_211325_1200_128_960_540.mp4"></video>
+                </div>
+                <div class="s2">
+                    <video autoplay muted controls src="http://h.vod.cgv.co.kr:80/vodCGVa/86157/86157_211242_1200_128_960_540.mp4"></video>
+                </div>
+                <div class="s3">
+                    <video autoplay muted controls src="http://h.vod.cgv.co.kr:80/vodCGVa/86157/86157_211022_1200_128_960_540.mp4"></video>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js">
+</script>
+<script>
+    $(document).ready(function(){
+        $('.your-class').slick({
+        // setting-name: setting-value
+        autoplay:true, dots:true, fade:true,
+    });
+});
+</script>
+<!-- slick 홈페이지 메뉴 중 get it now 클릭
+git hub로 이동하게 됨.
+아래 옵션 메뉴에서 autoplay와 dots 관련 내용이 나옴.  
+선택하게되면 아래 .1 .2 .3 으로 노출되게됨.
+li작업하기전 설정해줘야함.-->
+<!-- fade in fade out 장면이 변할때 다시 재생되지 않고
+재생되는 부분 계속 재생시킴,
+그리고 autoplay로 넘어갈때 짧은시간에 자동으로 넘어감 -->
+</body>
+</html>

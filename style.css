@@ -1,0 +1,131 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+
+li {list-style: none;}
+
+.wrap {
+    width: 800px;
+    margin: 100px auto 0;
+    /* 위 100px, auto 가운데, 아래 0 */
+}
+.wrap .main {}
+.wrap .main .your-class {
+    height: 420px;
+}
+.wrap .main .your-class .slick-slide {
+    height: 420px;
+}
+.wrap .main .your-class .slick-slide video {
+    width: 100%;
+}
+
+.wrap .main .your-class .slick-arrow {
+    position: absolute;
+    top: calc(50% - 10px);
+    font-size: 0;
+    /* 폰트의 기본값은 16px인데,
+    Chrome(크롬)에서는 최소 폰트크기가 10px이기때문에
+    8px -> 적용안됨 */
+    visibility: hidden; /* 버튼 영역을 숨김 */    
+}
+.wrap .main .your-class .slick-prev {
+    z-index: 5; /* 포지션이 없으면 적용안됨 */
+    left: 5%;
+}
+.wrap .main .your-class .slick-prev::after {
+    content: "\f359";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    visibility: visible; 
+    /* arrow에 hidden으로 버튼을 숨겼기때문에 */
+    /* fontawesome을 보이게끔 해줘야함. */
+    /* visible 버튼 영역 내 fontawesome 노출 */
+    font-size: 30px;
+    /* fontawesome 사이즈 30px */
+    color: #fff;
+}
+
+.wrap .main .your-class .slick-next {
+    right: 5%;
+}
+.wrap .main .your-class .slick-next::after {
+    content: "\f0a9";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    visibility: visible; 
+    /* arrow에 hidden으로 버튼을 숨겼기때문에 */
+    /* fontawesome을 보이게끔 해줘야함. */
+    /* visible 버튼 영역 내 fontawesome 노출 */
+    font-size: 30px;
+    /* fontawesome 사이즈 30px */
+    color: #fff;
+    /* fontawesome 색상을 화이트로 변경 */
+}
+
+.wrap .main .your-class .slick-dots {
+    text-align: center;
+}
+.wrap .main .your-class .slick-dots li {
+    display: inline-block;
+    /* 속성은 인라인처럼 자식요소에 공간만 차지하는데
+    위아래 위치는 블록처럼 인식하게됨 */
+    margin: 20px 5px 0; 
+    /* (1,2,3의 간격 위 20px 양옆 5px 아래0) */
+}
+.wrap .main .your-class .slick-dots li button {
+    border: none; /* ([1][2][3]의 선을 없애는 작업) */
+    font-size: 0;   /* 버튼 안에 숫자 0으로 없앰 */
+    width: 15px;    /* (버튼 간격 15px) */
+    height: 15px;
+    border-radius: 50%; /* (네모난 부분을 동그랗게만듬 50%) */
+    background-color: #999; /* (버튼색상 회색으로 변경) */
+    transition: 0.3s; 
+    /* 버튼을 눌렀을때 자연스럽게 변경하기 위함 0.3초 */
+}
+
+.wrap .main .your-class .slick-dots li.slick-active button {
+    /* li와 slick-active가 붙어있기때문에 li.slick-active */
+    background-color: #222; /* (선택될때 버튼 색상) */
+    width: 20px;            /* 선택될때 버튼 길이 20px */
+    border-radius: 5px;     /* 선택될때 버튼 각을 부드럽게 */
+}
+
+
+
+
+/* ▶▶▶사이트 접속 순서◀◀◀
+slick 사이트 -> sclick cdn -> jQuery cdn 
+-> slick cdn -> slick */
+
+
+/* slick 기본셋팅 */
+/* 1. slick 사이트내 
+<div class="your-class">
+<div>your content</div>
+<div>your content</div>
+<div>your content</div>
+</div>
+붙여넣기.
+
+2. slick cdn 사이트 내 min.css 복사하여 link 붙여넣기
+https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css
+
+3. script를 넣어야하며, </body> 위에 넣는다.
+jQuery cdn 안에서 minified를 넣어야함.
+jQuery 1.x
+jQuery Core 1.12.4 - uncompressed, minified
+
+4. slick cdn 사이트 내 첫번째 줄 script를 넣는다.
+https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js
+
+★★★순서는 무조건 처음 스크립트 아래 순서대로★★★
+
+
+5. slick 사이트 내 Initialize your slider in your script file or an inline script tag 넣는다.
+★★★<script>를 추가하여 넣어야함!!★★★
+$(document).ready(function(){
+    $('.your-class').slick({
+    setting-name: setting-value <- ★★주석처리 필요★★
+    });
+});
+</script> */
